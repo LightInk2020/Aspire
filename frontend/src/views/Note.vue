@@ -75,7 +75,7 @@
                 <template #trigger>
                   <n-button :focusable="false" size="large" quaternary>
                     <template #icon>
-                      <n-icon><Star /></n-icon>
+                      <n-icon size="18"><Star /></n-icon>
                     </template>
                   </n-button>
                 </template>
@@ -85,7 +85,7 @@
                 <template #trigger>
                   <n-button :focusable="false" size="large" quaternary>
                     <template #icon>
-                      <n-icon><Clock /></n-icon>
+                      <n-icon size="18"><Clock /></n-icon>
                     </template>
                   </n-button>
                 </template>
@@ -95,7 +95,7 @@
                 <template #trigger>
                   <n-button :focusable="false" size="large" quaternary>
                     <template #icon>
-                      <n-icon><MessageCircle /></n-icon>
+                      <n-icon size="18"><MessageCircle /></n-icon>
                     </template>
                   </n-button>
                 </template>
@@ -106,7 +106,7 @@
                 <template #trigger>
                   <n-button :focusable="false" size="large" quaternary class="note-bar__more">
                     <template #icon>
-                      <n-icon><MoreHorizFilled /></n-icon>
+                      <n-icon size="18"><MoreHorizFilled /></n-icon>
                     </template>
                   </n-button>
                 </template>
@@ -117,56 +117,56 @@
                 <n-divider/>
                 <div class="aspire_menu">
                   <n-button quaternary :focusable="false">
-                    <n-icon size="20"><FileSearch /></n-icon> 
+                    <n-icon size="18"><FileSearch /></n-icon> 
                     <span>查找</span>
                   </n-button>
                   <n-button quaternary :focusable="false">
-                    <n-icon size="20"><Replace /></n-icon> 
+                    <n-icon size="18"><Replace /></n-icon> 
                     <span>替换</span>
                   </n-button>
                 </div>
                 <n-divider/>
                 <div class="aspire_menu">
                   <n-button quaternary :focusable="false">
-                    <n-icon size="20"><Box /></n-icon> 
+                    <n-icon size="18"><Box /></n-icon> 
                     <span>转换为模版</span>
                   </n-button>
                   <n-button quaternary :focusable="false">
-                    <n-icon size="20"><FileSymlink /></n-icon> 
+                    <n-icon size="18"><FileSymlink /></n-icon> 
                     <span>添加快捷方式到</span>
                   </n-button>
                   <n-button quaternary :focusable="false">
-                    <n-icon size="20"><FileExport /></n-icon> 
+                    <n-icon size="18"><FileExport /></n-icon> 
                     <span>移动到</span>
                   </n-button>
                   <n-button quaternary :focusable="false">
-                    <n-icon size="20"><FileCopyOutlined /></n-icon> 
+                    <n-icon size="18"><FileCopyOutlined /></n-icon> 
                     <span>创建副本</span>
                   </n-button>
                   <n-button quaternary :focusable="false">
-                    <n-icon size="20"><Lock /></n-icon> 
+                    <n-icon size="18"><Lock /></n-icon> 
                     <span>加密</span>
                   </n-button>
                 </div>
                 <n-divider/>
                 <div class="aspire_menu">
                   <n-button quaternary :focusable="false">
-                    <n-icon size="20"><PersonOutlineFilled /></n-icon> 
+                    <n-icon size="18"><PersonOutlineFilled /></n-icon> 
                     <span>文件权限</span>
                   </n-button>
                   <n-button quaternary :focusable="false">
-                    <n-icon size="20"><TranslateRound /></n-icon> 
+                    <n-icon size="18"><TranslateRound /></n-icon> 
                     <span>翻译</span>
                   </n-button>
                   <n-button quaternary :focusable="false">
-                    <n-icon size="20"><FileDownloadOutlined /></n-icon> 
+                    <n-icon size="18"><FileDownloadOutlined /></n-icon> 
                     <span>导出</span>
                   </n-button>
                 </div>
                 <n-divider/>
                 <div class="aspire_menu">
                   <n-button quaternary :focusable="false">
-                    <n-icon size="20"><DeleteOutlineOutlined /></n-icon> 
+                    <n-icon size="18"><DeleteOutlineOutlined /></n-icon> 
                     <span>删除</span>
                   </n-button>
                 </div>
@@ -211,7 +211,7 @@
                 <n-tooltip placement="top-start" trigger="hover">
                   <template #trigger>
                     <n-button quaternary :focusable="false" size="small"> 
-                      <n-icon size="20">
+                      <n-icon size="18">
                         <Code />
                       </n-icon> 
                     </n-button>

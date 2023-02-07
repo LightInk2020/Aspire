@@ -67,15 +67,15 @@
     <!-- 操作 -->
     <div class="aspire_menu">
       <n-button quaternary :focusable="false">
-        <n-icon size="20"><Search /></n-icon> 
+        <n-icon size="18"><Search /></n-icon> 
         <span>Search</span>
       </n-button>
       <n-button quaternary :focusable="false">
-        <n-icon size="20"><Clock /></n-icon> 
+        <n-icon size="18"><Clock /></n-icon> 
         <span>Updates</span>
       </n-button>
       <n-button quaternary :focusable="false">
-        <n-icon size="20"><Settings /></n-icon> 
+        <n-icon size="18"><Settings /></n-icon> 
         <span>Settings</span>
       </n-button>
     </div>

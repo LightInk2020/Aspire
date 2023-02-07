@@ -12,7 +12,7 @@
           :root-indent="0"
           :collapsed="true"
           :collapsed-width="45"
-          :collapsed-icon-size="20"
+          :collapsed-icon-size="18"
           :options="topMenuOptions"
           default-value="note" 
         />
@@ -20,7 +20,7 @@
           :root-indent="0"
           :collapsed="true"
           :collapsed-width="45"
-          :collapsed-icon-size="20"
+          :collapsed-icon-size="18"
           :options="bottomMenuOptions"
         />
       </n-layout-sider>
@@ -80,13 +80,13 @@ const topMenuOptions = [
       RouterLink,
       {
         to: {
-          name: 'platform',
-          path: "/platform",
+          name: 'starry_sky',
+          path: "/starry_sky",
         }
       },
       { default: () => "星空" }
     ),
-    key: "platform",
+    key: "starry_sky",
     icon: renderIcon(Planet)
   }
 ]

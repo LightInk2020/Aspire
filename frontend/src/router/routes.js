@@ -14,9 +14,9 @@ const routes = [
         component: () => import('../views/Todo.vue')
     },
     {
-        name: 'platform',
-        path: '/platform',
-        component: () => import('../views/Platform.vue')
+        name: 'starry_sky',
+        path: '/starry_sky',
+        component: () => import('../views/StarrySky.vue')
     },
     {
         name: 'setting',
