@@ -6,7 +6,9 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
- 
+
+// common css
+import './styles/common.css'
 // 各种主题样式
 import './styles/themes.less'
 
