@@ -20,7 +20,7 @@
 
 <script setup>
 import BasicOperation from "../components/BasicOperation.vue"
-import MDEditor from "../components/MDEditor.vue"
+// import MDEditor from "../components/MDEditor.vue"
 import StarrySky from "./StarrySky.vue"
 
 </script>

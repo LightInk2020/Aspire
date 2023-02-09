@@ -8,6 +8,7 @@
         :collapsed="true"
         class="left-sider"
       >
+      <!-- TODO style="background-color: #F7F9FE;" -->
         <n-menu
           :root-indent="0"
           :collapsed="true"
@@ -190,5 +191,9 @@ onMounted(async () => {
   background-color: #fafafa; 
 }
 
+/* 卡片阴影 */
+.aspire_shadow {
+  --aspire-box-shadow: 0 8px 16px -4px #2c2d300c;
+}
 </style>
 
