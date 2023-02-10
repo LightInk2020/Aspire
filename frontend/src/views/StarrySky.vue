@@ -48,290 +48,285 @@
   </div>
 </template>
 
-<script>
-import { defineComponent, ref } from 'vue'
-
-export default defineComponent({
-  setup () {
-    return {
-      // 点击简介后，右侧展开
-      showIntroDrawer: ref(false), 
-      // 论文卡片信息列表
-      paperCardInfoList: [
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        },
-        {
-          name: 'This is the paper title for testing to test the card effect',
-          img: '/src/assets/test/paper_card_0.jpg',
-          date: '5 Feb 2023', // 发表日期
-          appear: 'ICLR', // 发表机构
-          authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
-          parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
-          abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
-          keywords: ['image caption', 'image generate', 'computer vision'],
-          notes: [
-            {
-              name: 'This is the note title for testing to test the card effect',
-              data: '20 Feb 2023',
-              authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
-              heat: 2048, // 热度
-            }
-          ]
-        }
-      ]
-    }
+<script setup>
+import { ref } from 'vue'
+ 
+// 点击简介后，右侧展开
+const showIntroDrawer = ref(false)
+// 论文卡片信息列表
+const paperCardInfoList = [
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
+  },
+  {
+    name: 'This is the paper title for testing to test the card effect',
+    img: '/src/assets/test/paper_card_0.jpg',
+    date: '5 Feb 2023', // 发表日期
+    appear: 'ICLR', // 发表机构
+    authors: ['Álvaro Sadee Jiménez', 'Naskdsia Valm', 'Alba Sageo', 'Bavas Test'],
+    parperLink: 'https://arxiv.org/pdf/2023.0212v1.pdf',
+    abstract: 'Diffusion methods have been proven to be very effective to generate images while conditioning on a text prompt. However, and although the quality of the generated images is unprecedented, these methods seem to struggle when trying to generate specific image compositions. In this paper we present Mixture of Diffusers, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.',
+    keywords: ['image caption', 'image generate', 'computer vision'],
+    notes: [
+      {
+        name: 'This is the note title for testing to test the card effect',
+        data: '20 Feb 2023',
+        authors: ['Ming Xiao', 'San Zhang', 'Si Li'],
+        heat: 2048, // 热度
+      }
+    ]
   }
-})
+]
+ 
 
 </script>
 
@@ -346,14 +341,10 @@ export default defineComponent({
 }
 
 .starry-sky__paper-card {
-  border-radius: 10px;
   margin: 20px auto;
-  box-shadow: var(--aspire-box-shadow);
-
-  transition: all .5s;
 }
 
 .starry-sky__paper-card:hover {
-  transform: scale(1.005) translateY(-.08rem); 
+  transform: scale(1.005) translateY(-.1rem); 
 }
 </style>

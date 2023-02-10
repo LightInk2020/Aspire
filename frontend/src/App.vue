@@ -1,14 +1,16 @@
 <template>
   <n-space vertical>
     <n-layout has-sider position="absolute">
+      <!-- 最左侧app侧边栏 -->
       <n-layout-sider
         bordered
         collapse-mode="width"
         :collapsed-width="45"
         :collapsed="true"
-        class="left-sider"
+        class="app__left-sider"
       >
       <!-- TODO style="background-color: #F7F9FE;" -->
+        <!-- TODO 关联default-value和地址栏 -->
         <n-menu
           :root-indent="0"
           :collapsed="true"
@@ -17,29 +19,73 @@
           :options="topMenuOptions"
           default-value="note" 
         />
-        <n-menu
-          :root-indent="0"
-          :collapsed="true"
-          :collapsed-width="45"
-          :collapsed-icon-size="18"
-          :options="bottomMenuOptions"
-        />
+        <div class="left-sider__container">
+          <n-menu
+            :root-indent="0"
+            :collapsed="true"
+            :collapsed-width="45"
+            :collapsed-icon-size="18"
+            :options="bottomMenuOptions"
+          />
+          <!-- 设置按钮 -->
+          <n-button @click="showSettingsModal = true" :focusable="false" quaternary class="app__settings-button">
+            <template #icon>
+              <n-icon><Settings /></n-icon>
+            </template>
+          </n-button>
+          <n-modal v-model:show="showSettingsModal">
+            <n-card
+              style="width: 600px"
+              title="设置"
+              :bordered="false"
+              size="huge"
+              role="dialog"
+              aria-modal="true"
+            >
+              <template #header-extra>
+                头部额外信息
+              </template>
+                内容
+              <template #footer>
+                尾部
+              </template>
+            </n-card>
+          </n-modal>
+        </div>
       </n-layout-sider>
       <n-layout-content>
-        <router-view />
+        <!-- 主体 -->
+        <n-layout has-sider position="absolute">
+          <!-- 左侧选项栏 -->
+          <n-layout-sider
+            collapse-mode="transform"
+            :collapsed-width="0"
+            :width="240"
+            show-trigger="bar"
+            bordered
+            :native-scrollbar="false"
+          >
+            <!-- 基础操作 -->
+            <BasicOperation />
+          </n-layout-sider>
+          <n-layout>
+            <router-view />
+          </n-layout>
+        </n-layout>
       </n-layout-content>
     </n-layout>
   </n-space>
 </template>
 
 <script setup>
-import { h, onMounted } from "vue";
+import BasicOperation from "./components/BasicOperation.vue"
+import { h, onMounted, ref } from "vue";
 // router-link 路由跳转
 import { RouterLink } from "vue-router";
 import { NIcon } from "naive-ui";
 // xicon使用
 import {
-  SmartHome, Checkbox, Planet, Settings
+  SmartHome, Checkbox, Planet, Settings, Star, Cloud, Tag
 } from '@vicons/tabler'
 
 // 解析icon为NIcon
@@ -47,6 +93,7 @@ const renderIcon = (icon) => {
   return () => h(NIcon, null, { default: () => h(icon) });
 }
 
+// 最左侧侧边栏
 const topMenuOptions = [
   {
     label: () => h(
@@ -89,25 +136,41 @@ const topMenuOptions = [
     ),
     key: "starry_sky",
     icon: renderIcon(Planet)
-  }
-]
-const bottomMenuOptions = [
+  },
   {
     label: () => h(
       RouterLink,
       {
         to: {
-          name: 'setting',
-          path: "/setting",
+          name: 'share',
+          path: "/share",
         }
       },
-      { default: () => "设置" }
+      { default: () => "分享" }
     ),
-    key: "setting",
-    icon: renderIcon(Settings)
+    key: "share",
+    icon: renderIcon(Cloud)
   },
-  // TODO 添加 收藏、分享、标签等只在note页面显示的选项
+  
 ]
+const bottomMenuOptions = [
+  // TODO 收藏、标签等只在note页面显示的选项
+  {
+    label: "收藏",
+    key: "stars",
+    show: true, // 显示
+    icon: renderIcon(Star)
+  },
+  {
+    label: "标签",
+    key: "tags",
+    show: true,
+    icon: renderIcon(Tag)
+  },
+]
+
+// 设置页面模态框
+const showSettingsModal = ref(false)
 
 onMounted(async () => {
   // 设置默认主题色
@@ -117,21 +180,35 @@ onMounted(async () => {
 </script>
 
 <style>
-.left-sider .n-layout-sider-scroll-container{
+.app__left-sider .n-layout-sider-scroll-container{
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.left-sider__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .n-menu .n-menu-item {
-    max-height: 35px;
+  max-height: 35px;
+  width: 45px;
 }
 
 .n-menu .n-menu-item-content::before {
   left: 5px;
   right: 5px;
 }
+
+.app__settings-button {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 6px;
+}
+
 
 /* 通用修改 */
 /* 布局框架 */
@@ -191,9 +268,19 @@ onMounted(async () => {
   background-color: #fafafa; 
 }
 
-/* 卡片阴影 */
-.aspire_shadow {
-  --aspire-box-shadow: 0 8px 16px -4px #2c2d300c;
+/* 卡片 */
+.n-card {
+  --aspire-box-shadow: 0 8px 16px -4px rgba(31,35,41, 0.1); 
+  border-radius: 10px;
+  box-shadow: var(--aspire-box-shadow);
+  transition: all .5s;
 }
+
+
+/* 隐藏 */
+.hidden {
+  display: none !important;
+}
+
 </style>
 

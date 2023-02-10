@@ -3,15 +3,11 @@ const routes = [
         path: '/',
         component: () => import('../views/Home.vue')
     },
+    
     {
         name: 'note',
         path: '/note',
         component: () => import('../views/Note.vue')
-    },
-    {
-        name: 'todo',
-        path: '/todo',
-        component: () => import('../views/Todo.vue')
     },
     {
         name: 'starry_sky',
@@ -19,11 +15,15 @@ const routes = [
         component: () => import('../views/StarrySky.vue')
     },
     {
-        name: 'setting',
-        path: '/setting',
-        component: () => import('../views/Setting.vue')
+        name: 'share',
+        path: '/share',
+        component: () => import('../views/Share.vue')
     },
-    
+    {
+        name: 'todo',
+        path: '/todo',
+        component: () => import('../views/Todo.vue')
+    },    
 ]
 
 export default routes
