@@ -240,9 +240,9 @@
   </n-layout-footer>
   <!-- 查找 & 替换 小窗口 -->
   <n-card 
-    content-style="padding: 5px 20px 20px 20px;" 
-    class="note__srdialog hidden"
-    id="note__srdialog"
+    content-style="padding: 5px 25px 20px 25px;" 
+    class="note__srdialog"
+    v-if="showSRDialog"
   >
     <!-- 关闭按钮 -->
     <n-button class="srdialog__close" :focusable="false" size="large" quaternary @click="handleSRDialogClose">
@@ -264,7 +264,6 @@
       <n-input
         placeholder="在文档内查找"
         type="textarea"
-        size="small"
         autofocus
         :autosize="{
           minRows: 1,
@@ -277,12 +276,10 @@
           0 / 0
         </template>
       </n-input>
-      <span class="srdialog__replace-part">替换为</span>
-      <n-input class="srdialog__replace-part"
+      <span v-show="showSRReplaceParts">替换为</span>
+      <n-input v-show="showSRReplaceParts"
         placeholder="替换内容"
         type="textarea"
-        size="small"
-        autofocus
         :autosize="{
           minRows: 1,
           maxRows: 3
@@ -292,8 +289,8 @@
       <div class="srdialog__buttons">
         <n-button>上一处</n-button>
         <n-button>下一处</n-button>
-        <n-button class="srdialog__replace-part">替换</n-button>
-        <n-button type="success" class="srdialog__replace-part">全部替换</n-button>
+        <n-button v-show="showSRReplaceParts">替换</n-button>
+        <n-button type="success" v-show="showSRReplaceParts" style="margin-right: 0;">全部替换</n-button>
       </div>
     </div>
   </n-card>
@@ -333,42 +330,33 @@ const noteWidthMarks = {
 }
 
 // 查找替换页面
+const showSRDialog = ref(false)
+const showSRReplaceParts = ref(false)
 const srDialogRef = ref("查找")
 function handleSRDialogOpen(val) {
   // 隐藏更多按钮菜单栏
   moreOperationsRef.value?.setShow(false)
   // 显示查找/替换的dialog
-  const srdialog = document.getElementById('note__srdialog')
-  srdialog.classList.remove("hidden")
-  const replaceParts = document.getElementsByClassName("srdialog__replace-part")
+  showSRDialog.value = true
+  // 不同按钮显示不同组件
   if (val === "替换") {
+    showSRReplaceParts.value = true
     srDialogRef.value="替换"
-    for(let part of replaceParts) {
-      part.classList.remove("hidden")
-    }
   } else {
+    showSRReplaceParts.value = false
     srDialogRef.value="查找"
-    for(let part of replaceParts) {
-      part.classList.add("hidden")
-    }
   }
 }
 // 关闭查找替换dialog
 function handleSRDialogClose() {
-  const srdialog = document.getElementById('note__srdialog')
-  srdialog.classList.add("hidden")
+  showSRDialog.value = false
 }
 // tabs切换
 function handleSRDialogTabUpdate(val) {
-  const replaceParts = document.getElementsByClassName("srdialog__replace-part")
   if (val === "替换") {
-    for(let part of replaceParts) {
-      part.classList.remove("hidden")
-    }
+    showSRReplaceParts.value = true
   } else {
-    for(let part of replaceParts) {
-      part.classList.add("hidden")
-    }
+    showSRReplaceParts.value = false
   }
 }
 
@@ -695,7 +683,11 @@ const toPreview = () => {
   position: fixed;
   top: 85px;
   right: 20px;
-  width: 400px;
+  width: 402px;
+}
+
+.note__srdialog .n-tabs-tab__label {
+  font-size: 1rem;
 }
 
 .srdialog__close {
@@ -724,7 +716,9 @@ const toPreview = () => {
 
 .srdialog__buttons {
   margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
 }
+.srdialog__buttons button {
+  margin-right: 10px;
+}
+
 </style>
