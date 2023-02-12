@@ -89,7 +89,7 @@
           评论
         </n-tooltip>
         <!-- 更多操作 -->
-        <n-popover ref="moreOperationsRef" width="220" placement="bottom-end" :show-arrow="false" trigger="click">
+        <n-popover class="aspire__popover" ref="moreOperationsRef" width="220" placement="bottom-end" :show-arrow="false" trigger="click">
           <template #trigger>
             <n-button :focusable="false" size="large" quaternary class="note-bar__more">
               <template #icon>

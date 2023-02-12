@@ -73,7 +73,7 @@ import { RouterLink } from "vue-router";
 import { NIcon } from "naive-ui";
 // xicon使用
 import {
-  SmartHome, Checkbox, Planet, Settings, Star, Cloud, Tag
+  SmartHome, Checkbox, Planet, Settings, Star, Cloud, Tag, Plant
 } from '@vicons/tabler'
 
 // 解析icon为NIcon
@@ -95,7 +95,7 @@ const topMenuOptions = [
       { default: () => "笔记" }
     ),
     key: "note",
-    icon: renderIcon(SmartHome)
+    icon: renderIcon(Plant)
   },
   {
     label: () => h(
@@ -209,18 +209,20 @@ onMounted(async () => {
 .n-divider {
   margin: 0 !important;
 }
+
 .n-divider.n-divider--vertical {
   height: auto;
 }
+
 /* 弹出信息 */
-.n-popover {
+.aspire__popover {
   /* TODO border: 1px solid var(--el-card-border-color); */  
   border: 1px solid #e5e7ec;
   border-radius: 5px !important;
 }
 
-.n-popover.n-popover--show-header-or-footer .n-popover__content,
-.n-popover .n-popover__footer {
+.aspire__popover.n-popover--show-header-or-footer .n-popover__content,
+.aspire__popover .n-popover__footer {
   padding: 0;
 }
 
@@ -258,9 +260,9 @@ onMounted(async () => {
 
 /* 卡片 */
 .n-card {
-  --aspire-box-shadow: 0 8px 16px -4px rgba(31,35,41, 0.1); 
+  --aspire-card-shadow: 0 8px 16px -4px rgba(31,35,41, 0.1); 
   border-radius: 10px;
-  box-shadow: var(--aspire-box-shadow);
+  box-shadow: var(--aspire-card-shadow);
   transition: all .5s;
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div class="starry-sky">
     <!-- 卡片列表展示论文和相关笔记信息 -->
-    <n-list :show-divider="false" class="starry-sky__paper-list">
+    <n-list :show-divider="false" class="aspire__large-list starry-sky__paper-list">
       <template #header>
         文献
       </template>
@@ -9,7 +9,7 @@
       <template #footer>
         需要footer吗？可以做成滚动到底部加载下一页，到最后说“我也是有底线的！”
       </template>
-      <n-card hoverable class="starry-sky__paper-card aspire_shadow" v-for="(paper, i) in paperCardInfoList">
+      <n-card hoverable class="aspire__large-list" v-for="(paper, i) in paperCardInfoList">
         <n-list-item>
           <template #prefix>
             <n-image
@@ -340,11 +340,11 @@ const paperCardInfoList = [
   width: 60%;
 }
 
-.starry-sky__paper-card {
+.aspire__large-list {
   margin: 20px auto;
 }
 
-.starry-sky__paper-card:hover {
+.aspire__large-list:hover {
   transform: scale(1.005) translateY(-.08rem); 
 }
 </style>

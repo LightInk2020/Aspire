@@ -6,9 +6,10 @@
     trigger="click"
     width="270"
     :show-arrow="false"
+    class="aspire__popover"
     >
     <template #trigger>
-      <n-button quaternary :focusable="false" class="basic-operation__user">
+      <n-button quaternary :focusable="false" class="basic-operation__user-button">
         <!-- 用户头像 -->
         <img
             :src="user.img"
@@ -119,7 +120,7 @@ const user = {
   justify-content: flex-start;
 }
 
-.basic-operation__user {
+.basic-operation__user-button {
   user-select: none; /* 子元素无法被选中 */
   display: flex;
   justify-content: flex-start;
