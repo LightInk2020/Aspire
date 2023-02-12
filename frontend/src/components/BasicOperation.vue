@@ -66,7 +66,7 @@
     </n-popover>
     <!-- 操作 -->
     <div class="aspire_menu">
-      <n-button quaternary :focusable="false">
+      <n-button quaternary :focusable="false" @click="showSearchModal = true">
         <n-icon size="18"><Search /></n-icon> 
         <span>Search</span>
       </n-button>
@@ -74,18 +74,36 @@
         <n-icon size="18"><Clock /></n-icon> 
         <span>Updates</span>
       </n-button>
-      <n-button quaternary :focusable="false">
+      <n-button quaternary :focusable="false" @click="showSettingsModal = true">
         <n-icon size="18"><Settings /></n-icon> 
         <span>Settings</span>
       </n-button>
     </div>
   </div>
+  <!-- modal -->
+  <!-- 搜索modal -->
+  <n-modal v-model:show="showSearchModal">
+    <SearchModal />
+  </n-modal>
+  <!-- 设置modal -->
+  <n-modal v-model:show="showSettingsModal">
+    <SettingsModal />
+  </n-modal>
 </template>
 
 <script setup>
 import { 
   Search, Clock, Settings
 } from '@vicons/tabler'
+import { ref } from 'vue'
+import SearchModal from './SearchModal.vue'
+import SettingsModal from './SettingsModal.vue'
+
+// 显示全局搜索框
+const showSearchModal = ref(false)
+// 显示设置页面
+const showSettingsModal = ref(false)
+
 
 const user = {
   name: "Virtual Moon",

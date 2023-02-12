@@ -239,6 +239,7 @@
     </div>
   </n-layout-footer>
   <!-- 查找 & 替换 小窗口 -->
+  <!-- TODO 封装成单独组建，便于在笔记、星空、分享等中使用（有的只有查找、没有替换功能，比如星空） -->
   <n-card 
     content-style="padding: 5px 25px 20px 25px;" 
     class="note__srdialog"

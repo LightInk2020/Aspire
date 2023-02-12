@@ -33,24 +33,6 @@
               <n-icon><Settings /></n-icon>
             </template>
           </n-button>
-          <n-modal v-model:show="showSettingsModal">
-            <n-card
-              style="width: 600px"
-              title="设置"
-              :bordered="false"
-              size="huge"
-              role="dialog"
-              aria-modal="true"
-            >
-              <template #header-extra>
-                头部额外信息
-              </template>
-                内容
-              <template #footer>
-                尾部
-              </template>
-            </n-card>
-          </n-modal>
         </div>
       </n-layout-sider>
       <n-layout-content>
@@ -75,10 +57,16 @@
       </n-layout-content>
     </n-layout>
   </n-space>
+  <!-- modal -->
+  <!-- settings modal -->
+  <n-modal v-model:show="showSettingsModal">
+    <SettingsModal />
+  </n-modal>
 </template>
 
 <script setup>
 import BasicOperation from "./components/BasicOperation.vue"
+import SettingsModal from "./components/SettingsModal.vue"
 import { h, onMounted, ref } from "vue";
 // router-link 路由跳转
 import { RouterLink } from "vue-router";

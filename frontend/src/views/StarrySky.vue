@@ -345,6 +345,6 @@ const paperCardInfoList = [
 }
 
 .starry-sky__paper-card:hover {
-  transform: scale(1.005) translateY(-.1rem); 
+  transform: scale(1.005) translateY(-.08rem); 
 }
 </style>
