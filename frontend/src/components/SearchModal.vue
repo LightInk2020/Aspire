@@ -113,7 +113,7 @@
                 <div class="aspire__normal-list-title">文件夹路径</div>
               </template>
               <template #footer>
-                <!-- 默认只展示3个结果，点击可以展开更多 -->
+                <!-- 默认只展示5个结果，点击可以展开更多 -->
                 <n-divider>
                   展开更多<n-icon><ChevronDown /></n-icon>
                 </n-divider>
@@ -179,7 +179,40 @@
       <n-tab-pane name="图片">
         <n-layout style="height: calc(100vh - 359px);" has-sider sider-placement="right">
           <n-layout content-style="padding: 20px;" :native-scrollbar="false">
-            <div>图片</div>
+            <div class="aspire__image-group" v-for="(imgGroup, i) in [1, 2, 3]">
+              <n-image-group :theme-overrides="imageGroupThemeOverrides">
+                <div class="aspire__image-group-header">
+                  <div class="aspire__image-group-title">本地</div>
+                </div>
+                <div class="aspire__image-group-content" :id="'aspire__image-group-content' + i">
+                  <n-image
+                    v-for="(img, j) in imgList"
+                    :key="j"
+                    lazy
+                    :src="img"
+                    :intersection-observer-options="{
+                      root: '#aspire__image-group-content' + i
+                    }"
+                    object-fit="cover"
+                    width="224"
+                    height="126" 
+                    fallback-src="/src/assets/img/image_error.png"
+                  >
+                    <template #placeholder>
+                      <div class="aspire__image-group-loading">
+                        Loading
+                      </div>
+                    </template>
+                  </n-image>
+                </div>  
+                <div class="aspire__image-group-footer">
+                  <!-- 默认只展示3行结果，点击可以展开更多 -->
+                  <n-divider>
+                    展开更多<n-icon><ChevronDown /></n-icon>
+                  </n-divider>
+                </div>
+              </n-image-group>
+            </div>
           </n-layout>
           <n-layout-sider
             content-style="padding: 24px;"
@@ -343,12 +376,49 @@ import {
 import { 
   CloseOutlined, KeyboardOptionKeyRound
 } from '@vicons/material'
+import { useThemeVars } from "naive-ui";
+import { computed } from "vue"
 
 
 // TODO 学习开源项目之类的，如何处理dialog的父子传值
 function handleSearchModalClose(){
   console.log('handleSearchModalClose: 学习开源项目之类的，如何处理dialog的父子传值')
 }
+
+// 图片组主题变量赋值
+const imageGroupThemeOverrides = computed(() => {
+  const { popoverColor, boxShadow2, textColor2, borderRadius } = useThemeVars().value;
+  const themeOverrides = {
+    toolbarColor: popoverColor,
+    toolbarBoxShadow: boxShadow2,
+    toolbarIconColor: textColor2
+  };
+  return themeOverrides;
+})
+// 图片搜索结果
+const imgList = [
+  "/src/assets/img/image_error.png",
+  "/src/assets/img/image_error.png",
+  "/src/assets/img/image_error.png",
+  "/src/assets/img/image_error.png",
+  "/src/assets/img/image_error.png",
+  "/src/assets/img/image_error.png",
+  "/src/assets/img/image_error.png",
+  "/src/assets/img/image_error.png",
+  "/src/assets/img/image_error.png",
+]
+const imgList2 = [
+  "/src/assets/img/user_img.jpg",
+  "/src/assets/img/user_img.jpg",
+  "/src/assets/img/user_img.jpg",
+  "/src/assets/img/user_img.jpg",
+  "/src/assets/img/user_im22g.jpg",
+  "/src/assets/img/user_img.jpg",
+  "/src/assets/img/user_img.jpg",
+  "/src/assets/img/user_img.jpg",
+  "/src/assets/img/user_img.jpg",
+]
+
 
 </script>
 
@@ -438,7 +508,8 @@ function handleSearchModalClose(){
 }
 
 /* aspire__normal-list */
-.aspire__normal-list .n-list__header {
+.aspire__normal-list .n-list__header,
+.aspire__image-group-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -468,7 +539,8 @@ function handleSearchModalClose(){
   font-size: .95rem;
 }
 
-.aspire__normal-list-item-title {
+.aspire__normal-list-item-title,
+.aspire__image-group-title {
   display: flex;
   font-size: .95rem;
   font-weight: 500;
@@ -517,18 +589,61 @@ function handleSearchModalClose(){
   padding: 0;
 }
 
-.aspire__normal-list .n-list__footer .n-divider {
+.aspire__normal-list .n-list__footer .n-divider,
+.aspire__image-group-footer .n-divider {
   padding: 5px 0;
   border-radius: 5px;
 }
 
-.aspire__normal-list .n-list__footer .n-divider:hover {
+.aspire__normal-list .n-list__footer .n-divider:hover,
+.aspire__image-group-footer .n-divider:hover {
   background-color: #eff4fe;
   color: #4275f6;
 }
 
-.aspire__normal-list .n-list__footer .n-divider .n-divider__title {
+.aspire__normal-list .n-list__footer .n-divider .n-divider__title,
+.aspire__image-group-footer .n-divider .n-divider__title {
   font-weight: normal;
   font-size: .9rem;
 }
+
+/* 图像组 */
+.n-image-preview-toolbar {
+  border-radius: 5px;
+}
+
+.n-image-preview-toolbar .n-base-icon {
+  padding: 0;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+.n-image-preview-toolbar .n-base-icon:hover {
+  background-color: #eceded;
+}
+
+.aspire__image-group-content .n-image {
+  margin: 5px;
+  border-radius: 5px;
+  /* TODO */
+  --aspire-normal-card-shadow: 0 1px 3px 0 #d4d9e1;
+  box-shadow: var(--aspire-normal-card-shadow);
+  transition: all .5s;
+}
+
+.aspire__image-group-content .n-image:hover {
+  /* TODO 这个是naive ui 自带的--n-box-shadow */
+  box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.08), 0 3px 6px 0 rgba(0, 0, 0, 0.06), 0 5px 12px 4px rgba(0, 0, 0, 0.04);
+  transform: scale(1.005) translateY(-.08rem); 
+}
+
+.aspire__image-group-loading {
+  width: 224px;
+  height: 126px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0001;
+}
+
 </style>
