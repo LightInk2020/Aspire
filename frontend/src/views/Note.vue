@@ -89,7 +89,7 @@
           评论
         </n-tooltip>
         <!-- 更多操作 -->
-        <n-popover class="aspire__popover" ref="moreOperationsRef" width="220" placement="bottom-end" :show-arrow="false" trigger="click">
+        <n-popover class="ap-popover" ref="moreOperationsRef" width="220" placement="bottom-end" :show-arrow="false" trigger="click">
           <template #trigger>
             <n-button :focusable="false" size="large" quaternary class="note-bar__more">
               <template #icon>
@@ -97,12 +97,12 @@
               </template>
             </n-button>
           </template>
-          <div class="aspire_menu">
+          <div class="ap-menu">
             <div>页面尺寸</div>
             <n-slider :min="50" :max="100" :default-value="50" :step="10" :marks="noteWidthMarks" :format-tooltip="noteWidthFormat" />
           </div>
           <n-divider/>
-          <div class="aspire_menu">
+          <div class="ap-menu">
             <n-button quaternary :focusable="false" @click="handleSRDialogOpen('查找')">
               <n-icon size="18"><FileSearch /></n-icon> 
               <span>查找</span>
@@ -113,7 +113,7 @@
             </n-button>
           </div>
           <n-divider/>
-          <div class="aspire_menu">
+          <div class="ap-menu">
             <n-button quaternary :focusable="false">
               <n-icon size="18"><Box /></n-icon> 
               <span>转换为模版</span>
@@ -136,7 +136,7 @@
             </n-button>
           </div>
           <n-divider/>
-          <div class="aspire_menu">
+          <div class="ap-menu">
             <n-button quaternary :focusable="false">
               <n-icon size="18"><PersonOutlineFilled /></n-icon> 
               <span>文件权限</span>
@@ -151,14 +151,14 @@
             </n-button>
           </div>
           <n-divider/>
-          <div class="aspire_menu">
+          <div class="ap-menu">
             <n-button quaternary :focusable="false">
               <n-icon size="18"><DeleteOutlineOutlined /></n-icon> 
               <span>删除</span>
             </n-button>
           </div>
           <template #footer>
-            <div class="note-bar__footer aspire_menu">
+            <div class="note-bar__footer ap-menu">
               <div class="note-bar__status-info">
                 <div>字数统计：1024</div>
                 <div>创建于 2023-02-01 </div>
@@ -246,7 +246,7 @@
     v-if="showSRDialog"
   >
     <!-- 关闭按钮 -->
-    <n-button class="srdialog__close" :focusable="false" size="large" quaternary @click="handleSRDialogClose">
+    <n-button class="srdialog__close small-button" :focusable="false" size="large" quaternary @click="handleSRDialogClose">
       <template #icon>
         <n-icon><CloseOutlined /></n-icon>
       </template>
@@ -695,9 +695,6 @@ const toPreview = () => {
   position: absolute;
   right: 20px;
   top: 10px;
-  width: 30px;
-  max-height: 30px;
-  padding: 0;
   z-index: 100;
 }
 

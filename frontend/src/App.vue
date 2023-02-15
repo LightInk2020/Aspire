@@ -215,45 +215,45 @@ onMounted(async () => {
 }
 
 /* 弹出信息 */
-.aspire__popover {
+.ap-popover {
   /* TODO border: 1px solid var(--el-card-border-color); */  
   border: 1px solid #e5e7ec;
   border-radius: 5px !important;
 }
 
-.aspire__popover.n-popover--show-header-or-footer .n-popover__content,
-.aspire__popover .n-popover__footer {
+.ap-popover.n-popover--show-header-or-footer .n-popover__content,
+.ap-popover .n-popover__footer {
   padding: 0;
 }
 
 /* 按钮菜单 */
-.aspire_menu {
+.ap-menu {
   display: flex;
   flex-direction: column;
   padding: 5px;
 }
 
-.aspire_menu button {
+.ap-menu button {
   justify-content: flex-start;
   padding: 0;
   padding-left: 5px;
 }
 
-.aspire_menu > div {
+.ap-menu > div {
   padding: var(--n-padding);
 }
 
-.aspire_menu span {
+.ap-menu span {
   margin-left: 5px;
 }
 
 /* 滑动选项 */
-.aspire_menu .n-slider {
+.ap-menu .n-slider {
   width: calc(100% - 20px);
   margin: 8px 10px 32px 10px;
 }
 
-.aspire_menu_bg {
+.ap-menu_bg {
   /* TODO color */
   background-color: #fafafa; 
 }
@@ -272,5 +272,11 @@ onMounted(async () => {
   display: none !important;
 }
 
+/* 按钮 */
+.small-button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
 </style>
 

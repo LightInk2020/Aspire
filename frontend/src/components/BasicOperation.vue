@@ -6,7 +6,7 @@
     trigger="click"
     width="270"
     :show-arrow="false"
-    class="aspire__popover"
+    class="ap-popover"
     >
     <template #trigger>
       <n-button quaternary :focusable="false" class="basic-operation__user-button">
@@ -46,7 +46,7 @@
       </n-button>
     </div>
     <!-- 操作菜单 -->
-    <div class="aspire_menu aspire_menu_bg">
+    <div class="ap-menu ap-menu_bg">
       <n-button quaternary :focusable="false">
         Create work account
       </n-button>
@@ -66,7 +66,7 @@
     </template>
     </n-popover>
     <!-- 操作 -->
-    <div class="aspire_menu">
+    <div class="ap-menu">
       <n-button quaternary :focusable="false" @click="showSearchModal = true">
         <n-icon size="18"><Search /></n-icon> 
         <span>Search</span>
